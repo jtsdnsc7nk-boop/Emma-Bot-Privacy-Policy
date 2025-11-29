@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Privacy Policy – EmmaBot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #eee;
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            line-height: 1.7;
-        }
-        h1 {
-            color: #4da6ff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #8ccfff;
-            margin-top: 40px;
-        }
-        .card {
-            background: #1b1b1b;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            box-shadow: 0 0 10px #000;
-        }
-        a {
-            color: #4da6ff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Privacy Policy – EmmaBot</title>
+<style>
+body {font-family: Arial, sans-serif; background:#111; color:#eee; max-width:900px; margin:auto; padding:40px; line-height:1.7;}
+h1 {color:#4da6ff; text-align:center; margin-bottom:20px;}
+h2 {color:#8ccfff; margin-top:40px;}
+.card {background:#1b1b1b; padding:25px; border-radius:12px; border:1px solid #333; box-shadow:0 0 10px #000;}
+a {color:#4da6ff; text-decoration:none;}
+a:hover {text-decoration:underline;}
+.lang-btn {margin-top:30px; padding:10px 20px; background:#4da6ff; border:none; border-radius:8px; cursor:pointer; color:#111; font-weight:bold;}
+</style>
 </head>
 <body>
 
-<h1>Privacy Policy – EmmaBot</h1>
+<h1 id="title">Privacy Policy – EmmaBot</h1>
 
-<div class="card">
-    <h2>1. Dane zbierane przez bota</h2>
-    <p>EmmaBot zbiera tylko podstawowe dane niezbędne do działania:</p>
-    <ul>
-        <li>ID użytkownika</li>
-        <li>ID serwera</li>
-        <li>Użyte komendy</li>
-    </ul>
-    <p>Nie zbieramy prywatnych wiadomości ani żadnych poufnych informacji.</p>
+<div class="card" id="content">
+<h2>1. Dane zbierane przez bota</h2>
+<p>EmmaBot zbiera tylko podstawowe dane niezbędne do działania: ID użytkownika, ID serwera i użyte komendy.</p>
 
-    <h2>2. Cel przetwarzania danych</h2>
-    <p>Dane są wykorzystywane wyłącznie do:</p>
-    <ul>
-        <li>Wyświetlania poprawnych embedów</li>
-        <li>Obsługi komend bota</li>
-        <li>Zarządzania rankingiem złapań/aktywności użytkowników</li>
-    </ul>
+<h2>2. Cel przetwarzania danych</h2>
+<p>Dane są wykorzystywane wyłącznie do obsługi bota i funkcji rozrywkowych.</p>
 
-    <h2>3. Przechowywanie danych</h2>
-    <p>Dane przechowywane są na serwerze bota i mogą być usunięte po decyzji właściciela bota. Nie udostępniamy danych osobom trzecim.</p>
+<h2>3. Przechowywanie danych</h2>
+<p>Dane przechowywane są na serwerze bota i mogą być usunięte na żądanie właściciela.</p>
 
-    <h2>4. Bezpieczeństwo</h2>
-    <p>Stosujemy podstawowe środki bezpieczeństwa, aby chronić Twoje dane przed przypadkowym dostępem osób trzecich.</p>
+<h2>4. Bezpieczeństwo</h2>
+<p>Stosujemy podstawowe środki bezpieczeństwa chroniące Twoje dane przed nieautoryzowanym dostępem.</p>
 
-    <h2>5. Twoje prawa</h2>
-    <p>Masz prawo zażądać usunięcia swoich danych lub wstrzymania ich przetwarzania. Aby to zrobić, skontaktuj się z właścicielem bota na Discordzie.</p>
+<h2>5. Twoje prawa</h2>
+<p>Masz prawo zażądać usunięcia danych lub wstrzymania ich przetwarzania – kontaktuj się z właścicielem bota na Discordzie.</p>
 
-    <h2>6. Zmiany w polityce prywatności</h2>
-    <p>Właściciel bota może zmieniać tę politykę w dowolnym momencie. Korzystanie z bota oznacza akceptację aktualnej wersji.</p>
+<h2>6. Zmiany</h2>
+<p>Polityka prywatności może być zmieniona w dowolnym momencie. Korzystanie z bota oznacza akceptację aktualnej wersji.</p>
 
-    <h2>7. Kontakt</h2>
-    <p>W razie pytań skontaktuj się z właścicielem bota na Discordzie lub oznacz go na serwerze.</p>
+<h2>7. Terms of Service</h2>
+<p>Pełen regulamin znajdziesz tutaj: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Terms-of-service/">Terms of Service – EmmaBot</a></p>
 </div>
+
+<button class="lang-btn" onclick="switchLanguage()">EN / PL</button>
+
+<script>
+let isPL = true;
+function switchLanguage() {
+    const title = document.getElementById('title');
+    const content = document.getElementById('content');
+    if(isPL){
+        title.innerText = "Privacy Policy – EmmaBot";
+        content.innerHTML = `
+        <h2>1. Data Collected</h2>
+        <p>EmmaBot collects only basic data needed for operation: user ID, server ID, and used commands.</p>
+        <h2>2. Purpose</h2>
+        <p>Data is used solely to operate the bot and its entertainment features.</p>
+        <h2>3. Data Storage</h2>
+        <p>Data is stored on the bot's server and can be deleted on owner's request.</p>
+        <h2>4. Security</h2>
+        <p>Basic security measures are applied to protect your data from unauthorized access.</p>
+        <h2>5. Your Rights</h2>
+        <p>You have the right to request deletion or suspension of your data – contact the bot owner on Discord.</p>
+        <h2>6. Changes</h2>
+        <p>The privacy policy can change at any time. Using the bot means acceptance of the current version.</p>
+        <h2>7. Terms of Service</h2>
+        <p>Full terms are here: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Terms-of-service/">Terms of Service – EmmaBot</a></p>
+        `;
+    } else {
+        title.innerText = "Privacy Policy – EmmaBot";
+        content.innerHTML = `
+        <h2>1. Dane zbierane przez bota</h2>
+        <p>EmmaBot zbiera tylko podstawowe dane niezbędne do działania: ID użytkownika, ID serwera i użyte komendy.</p>
+        <h2>2. Cel przetwarzania danych</h2>
+        <p>Dane są wykorzystywane wyłącznie do obsługi bota i funkcji rozrywkowych.</p>
+        <h2>3. Przechowywanie danych</h2>
+        <p>Dane przechowywane są na serwerze bota i mogą być usunięte na żądanie właściciela.</p>
+        <h2>4. Bezpieczeństwo</h2>
+        <p>Stosujemy podstawowe środki bezpieczeństwa chroniące Twoje dane przed nieautoryzowanym dostępem.</p>
+        <h2>5. Twoje prawa</h2>
+        <p>Masz prawo zażądać usunięcia danych lub wstrzymania ich przetwarzania – kontaktuj się z właścicielem bota na Discordzie.</p>
+        <h2>6. Zmiany</h2>
+        <p>Polityka prywatności może być zmieniona w dowolnym momencie. Korzystanie z bota oznacza akceptację aktualnej wersji.</p>
+        <h2>7. Terms of Service</h2>
+        <p>Pełen regulamin znajdziesz tutaj: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Terms-of-service/">Terms of Service – EmmaBot</a></p>
+        `;
+    }
+    isPL = !isPL;
+}
+</script>
 
 </body>
 </html>
